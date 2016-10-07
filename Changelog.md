@@ -9,6 +9,8 @@ Features:
 Bugfixes:
  * Disallow unknown options in `solc`
  * Inline assembly: support the `address` opcode
+ * Inline assembly: magic variables (`this`, `super`, etc.) are not visible
+   in inline assembly and they can be used as local variables names
 
 ### 0.4.2 (2016-09-17)
 
