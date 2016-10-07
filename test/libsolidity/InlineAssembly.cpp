@@ -157,6 +157,13 @@ BOOST_AUTO_TEST_CASE(oversize_string_literals)
 	BOOST_CHECK(!successAssemble("{ let x := \"123456789012345678901234567890123\" }"));
 }
 
+BOOST_AUTO_TEST_CASE(magic_variables)
+{
+	BOOST_CHECK(!successAssemble("{ this }"));
+	BOOST_CHECK(!successAssemble("{ ecrecover }"));
+	BOOST_CHECK(successAssemble("{ let ecrecover := 1 ecrecover }"));
+}
+
 BOOST_AUTO_TEST_SUITE_END()
 
 }
